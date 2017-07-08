@@ -1,6 +1,6 @@
 {
     "common": {
-        "name": "template",
+        "name": "mystrom",
         "version": "0.5.0",
         "news": {
             "0.5.0": {
@@ -20,22 +20,22 @@
                 "nl": "Eerste release"
             }
         },
-        "title": "Javascript/Node.js based template adapter",
+        "title": "Javascript/Node.js based mystrom adapter",
         "desc": {
-            "en": "ioBroker template Adapter",
-            "de": "ioBroker Template Adapter",
-            "ru": "ioBroker Template драйвер как образец",
+            "en": "ioBroker mystrom Adapter",
+            "de": "ioBroker Mystrom Adapter",
+            "ru": "ioBroker Mystrom драйвер как образец",
             "pt": "Modelo de adaptador para o ioBroker",
             "fr": "ioBroker adaptateur modèle",
-            "nl": "ioBroker Template Adapter"
+            "nl": "ioBroker Mystrom Adapter"
         },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
-        "icon": "template.png",
+        "icon": "mystrom.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.template/master/admin/template.png",
-        "keywords": ["template", "vis", "GUI", "graphical", "scada"],
-        "readme": "https://github.com/ioBroker/ioBroker.template/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.mystrom/master/admin/mystrom.png",
+        "keywords": ["mystrom", "vis", "GUI", "graphical", "scada"],
+        "readme": "https://github.com/ioBroker/ioBroker.mystrom/blob/master/README.md",
         "loglevel": "info",
         "type": "general",
         "restartAdapters": ["vis"]
