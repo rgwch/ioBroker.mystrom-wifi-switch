@@ -37,17 +37,15 @@
         "mode": "daemon",
         "icon": "mystrom.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.mystrom/master/admin/mystrom.png",
+        "extIcon": "https://github.com/rgwch/ioBroker.mystrom/blob/master/admin/mystrom.png",
         "keywords": ["mystrom", "iobroker"],
-        "readme": "https://github.com/ioBroker/ioBroker.mystrom/blob/master/README.md",
+        "readme": "https://github.com/rgwch/ioBroker.mystrom/blob/master/README.md",
         "loglevel": "info",
         "type": "hardware",
         "restartAdapters": ["vis"]
     },
     "native": {
         "url": "192.168.1.111",
-        "test1": true,
-        "test2": 42
     },
     "objects": [
 
