@@ -17,7 +17,7 @@ This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to
 This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list,
 Install it from a shell. CD into /opt/iobroker and then
 
-    npm install https://github.com/rgwch/ioBroker.mystrom/tarball/master/
+    npm install https://github.com/rgwch/ioBroker.mystrom/tarball/master
 
 The adapter should then be in the admin pages's list.
 

@@ -37,7 +37,7 @@
       "chai": "^3.4.1"
 
   },
-  "main": "main.js",
+  "main": "mystrom.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   },

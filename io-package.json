@@ -2,6 +2,9 @@
     "common": {
         "name": "mystrom",
         "version": "0.6.0",
+        "authors":[
+            "name rgw@elexis.ch"
+        ],
         "news": {
             "0.6.0":{
                 "en": "template adapted to myStrom Switch",
