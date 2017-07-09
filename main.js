@@ -31,6 +31,8 @@
 /*jslint node: true */
 "use strict";
 
+var request=require('request');
+
 // you have to require the utils module and call adapter function
 var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
 
@@ -62,7 +64,19 @@ adapter.on('stateChange', function (id, state) {
 
     // you can use the ack flag to detect if it is status (true) or command (false)
     if (state && !state.ack) {
-        adapter.log.info('ack is not set!');
+        adapter.log.info('ack is not set. switching');
+      var url=adapter.config.url;
+      adapter.log.info("url is "+url);
+      adapter.log.info("state is "+JSON.stringify(state))
+      var requeststring="http://"+url+"/relay?state="+(state.val== true ? "1" : "0");
+      adapter.log.info("requeststring is "+requeststring)
+      request(requeststring,function(error,response,body){
+        if(error){
+          adapter.log.error(error)
+        }else{
+          adapter.log.info(body)
+        }
+      })
     }
 });
 
@@ -91,7 +105,7 @@ function main() {
     // adapter.config:
     adapter.log.info('config test1: ' + adapter.config.test1);
     adapter.log.info('config test1: ' + adapter.config.test2);
-
+    adapter.log.info("started mystrom")
 
     /**
      *
@@ -103,15 +117,15 @@ function main() {
      *
      */
 
-    adapter.setObject('testVariable', {
+    adapter.setObject('switchState',{
         type: 'state',
         common: {
-            name: 'testVariable',
+            name: 'switchState',
             type: 'boolean',
             role: 'indicator'
         },
-        native: {}
-    });
+        native:{}
+    })
 
     // in this mystrom all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
@@ -125,18 +139,32 @@ function main() {
      */
 
     // the variable testVariable is set to true as command (ack=false)
-    adapter.setState('testVariable', true);
+    // adapter.setState('testVariable', true);
+    var url=adapter.config.url;
+    adapter.log.info("url is "+url);
+
+    request("http://"+url+"/report",function(error,response,body){
+      if(error){
+        adapter.log.error(error)
+      }else{
+        adapter.log.info(body)
+        var result=JSON.parse(body);
+        adapter.log.info("switch is "+result.relay)
+        adapter.setState("switchState",{val: result.relay, ack: true})
+      }
+    })
 
     // same thing, but the value is flagged "ack"
     // ack should be always set to true if the value is received from or acknowledged from the target system
-    adapter.setState('testVariable', {val: true, ack: true});
+    //adapter.setState('testVariable', {val: true, ack: true});
 
     // same thing, but the state is deleted after 30s (getState will return null afterwards)
-    adapter.setState('testVariable', {val: true, ack: true, expire: 30});
+    //adapter.setState('testVariable', {val: true, ack: true, expire: 30});
 
 
 
     // examples for the checkPassword/checkGroup functions
+  /*
     adapter.checkPassword('admin', 'iobroker', function (res) {
         console.log('check user admin pw ioboker: ' + res);
     });
@@ -144,7 +172,7 @@ function main() {
     adapter.checkGroup('admin', 'admin', function (res) {
         console.log('check group user admin group admin: ' + res);
     });
-
+*/
 
 
 }

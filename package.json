@@ -3,16 +3,16 @@
   "version": "0.5.0",
   "description": "ioBroker mystrom Adapter",
   "author": {
-    "name": "Gerry Weirich",
-    "email": "weirich@elexis.ch"
+    "name": "rgwch",
+    "email": "rgw@elexis.ch"
   },
   "contributors": [
     {
-      "name": "Gerry Weirich",
-      "email": "weirich@elexis.ch"
+      "name": "rgwch",
+      "email": "rgw@elexis.ch"
     }
   ],
-  "homepage": "https://github.com/ioBroker/ioBroker.mystrom",
+  "homepage": "https://github.com/rgwch/ioBroker.mystrom",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -22,9 +22,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ioBroker/ioBroker.mystrom"
+    "url": "https://github.com/rgwch/ioBroker.mystrom"
   },
   "dependencies": {
+    "request":"^2.81.0"
   },
   "devDependencies": {
       "grunt": "^0.4.5",
@@ -34,13 +35,14 @@
       "grunt-http": "^1.6.0",
       "mocha": "^2.3.4",
       "chai": "^3.4.1"
+
   },
   "main": "main.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   },
   "bugs": {
-    "url": "https://github.com/ioBroker/ioBroker.mystrom/issues"
+    "url": "https://github.com/rgwch/ioBroker.mystrom/issues"
   },
   "readmeFilename": "README.md"
 }
