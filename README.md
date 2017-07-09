@@ -12,6 +12,25 @@ Thanks to the ioBroker people!
 
 This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to ioBroker.
 
+## Install
+
+This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list,
+Install it from a shell. CD into /opt/iobroker and then
+
+    npm install https://github.com/rgwch/ioBroker.mystrom/tarball/master/
+
+The adapter should then be in the admin pages's list.
+
+Click on the **+** sign on the right as usual to create an instance. The Config will ask you for the IP Address of the switch to manage.
+That's all. If you have several switches, just create several adapters.
+
+## Use
+
+Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts 
+(and will always be 0 if  switchState is false, of course)
+
+SwitchState is writeable.
+
 #### 0.6.0
 
 * (rgwch) Converted to myStrom wifi switch adapter
