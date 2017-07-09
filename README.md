@@ -1,4 +1,5 @@
 ![Logo](admin/mystrom.png)
+
 # ioBroker.mystrom
 =================
 
@@ -9,9 +10,19 @@ Thanks to the ioBroker people!
 
 ## What it is
 
-This adapter connects [myStrom](http://www.mystrom.ch) Switches to ioBroker.
+This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to ioBroker.
 
-## 
+#### 0.6.0
+
+* (rgwch) Converted to myStrom wifi switch adapter
+
+#### 0.5.0
+
+(vegetto) include vis widget
+
+#### 0.4.0
+
+(bluefox) fix errors with grunt
 
 #### 0.2.0
 * (bluefox) initial release

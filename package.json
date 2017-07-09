@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mystrom",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "ioBroker mystrom Adapter",
   "author": {
     "name": "rgwch",
