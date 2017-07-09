@@ -37,7 +37,7 @@
         "mode": "daemon",
         "icon": "mystrom.png",
         "enabled": true,
-        "extIcon": "https://github.com/rgwch/ioBroker.mystrom/blob/master/admin/mystrom.png",
+        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom/master/admin/mystrom.png",
         "keywords": ["mystrom", "iobroker"],
         "readme": "https://github.com/rgwch/ioBroker.mystrom/blob/master/README.md",
         "loglevel": "info",

@@ -4,7 +4,7 @@
 =================
 
 
-Note: This is forked derived from the ioBroker adapter template. So there'll be things from the original creators left.
+Note: This is forked and derived from the ioBroker adapter template. So there'll be things from the original creators left.
 Thanks to the ioBroker people!
 
 
