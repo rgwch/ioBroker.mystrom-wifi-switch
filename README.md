@@ -31,6 +31,10 @@ Each instance will create a switchState and a switchPower object. SwitchState is
 
 SwitchState is writeable.
 
+### 0.7.9
+
+* (rgwch) added power sensor
+
 #### 0.6.0
 
 * (rgwch) Converted to myStrom wifi switch adapter
