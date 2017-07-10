@@ -22,7 +22,7 @@ Install it from a shell. CD into /opt/iobroker and then
 The adapter should then be in the admin pages's list.
 
 Click on the **+** sign on the right as usual to create an instance. The Config will ask you for the IP Address of the switch to manage.
-That's all. If you have several switches, just create several adapters.
+That's all. If you have several switches, just create several instances.
 
 ## Use
 

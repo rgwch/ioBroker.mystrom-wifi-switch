@@ -32,6 +32,7 @@
 "use strict";
 
 var request = require('request');
+var schedule = require('node-schedule');
 
 // you have to require the utils module and call adapter function
 var utils = require(__dirname + '/lib/utils'); // Get common adapter utils
@@ -76,6 +77,20 @@ adapter.on('ready', function () {
   main();
 });
 
+function checkStates() {
+  var url = adapter.config.url;
+  request("http://" + url + "/report", function (error, response, body) {
+    if (error) {
+      adapter.log.error(error)
+    } else {
+      adapter.log.debug(body)
+      var result = JSON.parse(body);
+      adapter.setState("switchState", {val: result.relay, ack: true})
+      adapter.setState("power", {val: result.power, ack: true});
+    }
+  });
+}
+
 function main() {
 
   adapter.log.info("started mystrom")
@@ -86,7 +101,21 @@ function main() {
     common: {
       name: 'switchState',
       type: 'boolean',
-      role: 'indicator'
+      role: 'indicator',
+      read: true,
+      write: true
+    },
+    native: {}
+  })
+
+  adapter.setObject('power',{
+    type: 'state',
+    common:{
+      name: 'switchPower',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
     },
     native: {}
   })
@@ -94,18 +123,13 @@ function main() {
   // in this mystrom all states changes inside the adapters namespace are subscribed
   adapter.subscribeStates('*');
 
-  var url = adapter.config.url;
-  //adapter.log.info("url is " + url);
 
-  request("http://" + url + "/report", function (error, response, body) {
-    if (error) {
-      adapter.log.error(error)
-    } else {
-      adapter.log.info(body)
-      var result = JSON.parse(body);
-      adapter.log.info("switch is " + result.relay)
-      adapter.setState("switchState", {val: result.relay, ack: true})
-    }
-  })
+  checkStates()
 
+  var interval=adapter.config.polling
+  if(!interval){
+    interval=10;
+  }
+
+  schedule.scheduleJob({minute: interval}, checkStates)
 }
