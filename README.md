@@ -26,7 +26,7 @@ or, install it as a custom adapter from the admin-ui:
 
 The adapter should then be in the admin pages's list.
 
-Click on the **+** sign on the right as usual to create an instance. The Config will ask you for the IP Address of the switch to manage.
+Click on the **+** sign on the right as usual to create an instance. The Config will ask you for the IP Address of the switch to manage, and for the polling interval in seconds.
 That's all. If you have several switches, just create several instances.
 
 ## Use
@@ -36,7 +36,7 @@ Each instance will create a switchState and a switchPower object. SwitchState is
 
 SwitchState is writeable.
 
-### 0.7.0
+#### 0.7.0
 
 * (rgwch) added power sensor
 
