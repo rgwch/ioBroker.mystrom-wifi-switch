@@ -62,7 +62,10 @@
 "use strict";
 
 var request = require('request');
-var intervalObj = undefined
+var intervalObj = undefined;
+var interval=60
+var lastDate=new Date()
+var lastValue=0
 
 
 // you have to require the utils module and call adapter function
@@ -116,6 +119,10 @@ function checkStates() {
       var result = JSON.parse(body);
       adapter.setState("switchState", {val: result.relay, ack: true})
       adapter.setState("power", {val: result.power, ack: true});
+      var wattseconds=result.power*interval
+      var total=adapter.getState("total_energy")
+      adapter.setState("total_energy",{val: total+(wattseconds/3600)})
+
     }
   });
 }
@@ -150,9 +157,53 @@ adapter.on('ready', function () {
     native: {}
   })
 
+  /**
+   * Energy since installation of the adapter (Wh)
+   */
+  adapter.setObject('total_energy',{
+    type: 'state',
+    common: {
+      name: 'total energy',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
+    },
+    native: {}
+  })
+  /**
+   * energy of the current day (Wh)
+   */
+  adapter.setObject('day_energy',{
+    type: 'state',
+    common: {
+      name: 'day energy',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
+    },
+    native: {}
+  })
+
+  /**
+   * Energy since last disconnection (Ws)
+   */
+  adapter.setObject('consumed_energy',{
+    type: 'state',
+    common: {
+      name: 'consumed energy',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
+    },
+    native: {}
+  })
+
   // in this mystrom all states changes inside the adapters namespace are subscribed
   adapter.subscribeStates('*');
-  var interval = adapter.config.polling
+  interval = adapter.config.polling
   if (!interval) {
     interval = 60;
   }
