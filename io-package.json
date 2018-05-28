@@ -1,11 +1,19 @@
 {
     "common": {
         "name": "mystrom",
-        "version": "0.8.0",
+        "version": "0.8.1",
         "authors":[
             "name rgw@elexis.ch"
         ],
         "news": {
+            "0.8.1":{
+                "en": "Bugfix",
+                "de": "Fehlerkorrektur" 
+            },
+            "0.8.0":{
+                "en": "energy consumption added",
+                "de": "Energieverbrauchsanzeige beigefügt"
+            },
             "0.6.0":{
                 "en": "template adapted to myStrom Switch",
                 "de": "Tenplate an myStrom Schalter angepasst"

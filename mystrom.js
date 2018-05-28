@@ -115,13 +115,15 @@ function checkStates() {
     if (error) {
       adapter.log.error(error)
     } else {
-      // adapter.log.info(body)
+      adapter.log.debug(body)
       var result = JSON.parse(body);
       adapter.setState("switchState", {val: result.relay, ack: true})
       adapter.setState("power", {val: result.power, ack: true});
       var wattseconds=result.power*interval
       var total=adapter.getState("total_energy")
-      adapter.setState("total_energy",{val: total+(wattseconds/3600)})
+      if(total==undefined) total=0;
+      total=total+wattseconds/3600;
+      adapter.setState("total_energy",{val: total,ack: true})
 
     }
   });
