@@ -1,7 +1,7 @@
 ![Logo](admin/mystrom.png)
 
-# ioBroker.mystrom
-=================
+# ioBroker.mystrom-wifi-switch
+
 
 
 Note: This is forked and derived from the ioBroker adapter template. So there'll be things from the original creators left.
@@ -17,7 +17,7 @@ This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to
 This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list,
 Install it from a shell. CD into /opt/iobroker and then
 
-    npm install https://github.com/rgwch/ioBroker.mystrom/tarball/master
+    npm install https://github.com/rgwch/ioBroker.mystrom-wifi-switch/tarball/master
 
 or, install it as a custom adapter from the admin-ui:
 
