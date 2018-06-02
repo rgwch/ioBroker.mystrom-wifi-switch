@@ -1,7 +1,7 @@
 {
   "name": "iobroker.mystrom-wifi-switch",
   "version": "0.8.1",
-  "description": "ioBroker mystrom Adapter",
+  "description": "ioBroker mystrom Wifi Switch Adapter",
   "author": {
     "name": "rgwch",
     "email": "rgw@elexis.ch"
@@ -12,7 +12,7 @@
       "email": "rgw@elexis.ch"
     }
   ],
-  "homepage": "https://github.com/rgwch/ioBroker.mystrom",
+  "homepage": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rgwch/ioBroker.mystrom"
+    "url": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch"
   },
   "dependencies": {
     "request":"^2.81.0"
