@@ -1,6 +1,6 @@
 {
     "common": {
-        "name": "mystrom",
+        "name": "mystrom-wifi-switch",
         "version": "0.8.1",
         "authors":[
             "name rgw@elexis.ch"

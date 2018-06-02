@@ -1,6 +1,6 @@
 /**
  *
- * mystrom adapter
+ * mystrom-wifi-switch adapter
  *
  *
  *  file io-package.json comments:

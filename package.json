@@ -1,5 +1,5 @@
 {
-  "name": "iobroker.mystrom",
+  "name": "iobroker.mystrom-wifi-switch",
   "version": "0.8.1",
   "description": "ioBroker mystrom Adapter",
   "author": {
