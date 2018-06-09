@@ -7,7 +7,7 @@
         ],
         "news": {
           "0.8.3":{
-              "en": "bugfixes",
+              "en": "bugfixes, https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/3",
               "de": "Bugfix" 
           },
             "0.8.2":{
@@ -54,7 +54,7 @@
         },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
-        "icon": "mystrom.png",
+        "icon": "mystrom-wifi-switch.png",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom.png",
         "keywords": ["mystrom", "iobroker"],
