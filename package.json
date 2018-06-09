@@ -1,7 +1,7 @@
 {
   "name": "iobroker.mystrom-wifi-switch",
-  "version": "0.8.1",
-  "description": "ioBroker mystrom Adapter",
+  "version": "0.8.2",
+  "description": "ioBroker mystrom  wifi switch Adapter",
   "author": {
     "name": "rgwch",
     "email": "rgw@elexis.ch"

@@ -1,11 +1,14 @@
 {
     "common": {
         "name": "mystrom-wifi-switch",
-        "version": "0.8.1",
+        "version": "0.8.2",
         "authors":[
             "name rgw@elexis.ch"
         ],
         "news": {
+            "0.8.2":{
+                "en": "rename to mystrom-wifi-switch"
+            },
             "0.8.1":{
                 "en": "Bugfix",
                 "de": "Fehlerkorrektur" 
