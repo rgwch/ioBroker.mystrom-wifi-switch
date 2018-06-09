@@ -56,7 +56,7 @@
         "mode": "daemon",
         "icon": "mystrom-wifi-switch.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom.png",
+        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.png",
         "keywords": ["mystrom", "iobroker"],
         "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
         "loglevel": "info",
