@@ -7,7 +7,7 @@
  *
  *  {
  *      "common": {
- *          "name":         "mystrom",                  // name has to be set and has to be equal to adapters folder name and main file name excluding extension
+ *          "name":         "mystrom-wifi-switch",                  // name has to be set and has to be equal to adapters folder name and main file name excluding extension
  *          "version":      "0.0.0",                    // use "Semantic Versioning"! see http://semver.org/
  *          "title":        "Node.js mystrom Adapter",  // Adapter title shown in User Interfaces
  *          "authors":  [                               // Array of authord
@@ -73,8 +73,8 @@ var utils = require(__dirname + '/lib/utils'); // Get common adapter utils
 
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
-// adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.mystrom.0
-var adapter = utils.adapter('mystrom');
+// adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.mystrom-wifi-switch.0
+var adapter = utils.adapter('mystrom-wifi-switch');
 
 // is called when adapter shuts down - callback has to be called under any circumstances!
 adapter.on('unload', function (callback) {
@@ -133,7 +133,7 @@ function checkStates() {
 // is called when databases are connected and adapter received configuration.
 // start here!
 adapter.on('ready', function () {
-  adapter.log.info("started mystrom")
+  adapter.log.info("started mystrom wifi switch")
 
   adapter.setObject('switchState', {
     type: 'state',
@@ -203,7 +203,7 @@ adapter.on('ready', function () {
     native: {}
   })
 
-  // in this mystrom all states changes inside the adapters namespace are subscribed
+  // in this adapter all states changes inside the adapters namespace are subscribed
   adapter.subscribeStates('*');
   interval = adapter.config.polling
   if (!interval) {
