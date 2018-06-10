@@ -5,6 +5,7 @@
         "authors":[
             "name rgw@elexis.ch"
         ],
+        "materialize": true,
         "news": {
           "0.8.3":{
               "en": "bugfixes, https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/3",
