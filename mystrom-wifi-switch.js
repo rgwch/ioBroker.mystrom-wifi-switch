@@ -63,9 +63,9 @@
 
 var request = require('request');
 var intervalObj = undefined;
-var interval=60
-var lastDate=new Date()
-var lastValue=0
+var interval = 60;
+var lastDate = new Date();
+var lastValue = 0;
 
 
 // you have to require the utils module and call adapter function
@@ -74,7 +74,7 @@ var utils = require(__dirname + '/lib/utils'); // Get common adapter utils
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.mystrom-wifi-switch.0
-var adapter = utils.adapter('mystrom-wifi-switch');
+var adapter = new utils.Adapter('mystrom-wifi-switch');
 
 // is called when adapter shuts down - callback has to be called under any circumstances!
 adapter.on('unload', function (callback) {
@@ -119,12 +119,11 @@ function checkStates() {
       var result = JSON.parse(body);
       adapter.setState("switchState", {val: result.relay, ack: true})
       adapter.setState("power", {val: result.power, ack: true});
-      var wattseconds=result.power*interval
-      var total=adapter.getState("total_energy")
-      if(total==undefined) total=0;
-      total=total+wattseconds/3600;
-      adapter.setState("total_energy",{val: total,ack: true})
-
+      var wattseconds = result.power * interval;
+      var total = adapter.getState("total_energy")
+      if (total === undefined) total = 0;
+      total = total + wattseconds / 3600;
+      adapter.setState("total_energy", {val: total, ack: true});
     }
   });
 }
@@ -133,7 +132,7 @@ function checkStates() {
 // is called when databases are connected and adapter received configuration.
 // start here!
 adapter.on('ready', function () {
-  adapter.log.info("started mystrom wifi switch")
+  adapter.log.info("started mystrom wifi switch");
 
   adapter.setObject('switchState', {
     type: 'state',
@@ -145,7 +144,7 @@ adapter.on('ready', function () {
       write: true
     },
     native: {}
-  })
+  });
 
   adapter.setObject('power', {
     type: 'state',
@@ -157,7 +156,7 @@ adapter.on('ready', function () {
       role: 'value'
     },
     native: {}
-  })
+  });
 
   /**
    * Energy since installation of the adapter (Wh)
@@ -172,7 +171,7 @@ adapter.on('ready', function () {
       role: 'value'
     },
     native: {}
-  })
+  });
   /**
    * energy of the current day (Wh)
    */
@@ -186,7 +185,7 @@ adapter.on('ready', function () {
       role: 'value'
     },
     native: {}
-  })
+  });
 
   /**
    * Energy since last disconnection (Ws)
@@ -201,16 +200,14 @@ adapter.on('ready', function () {
       role: 'value'
     },
     native: {}
-  })
+  });
 
   // in this adapter all states changes inside the adapters namespace are subscribed
   adapter.subscribeStates('*');
-  interval = adapter.config.polling
-  if (!interval) {
-    interval = 60;
-  }
-  adapter.log.info("setting interval to " + interval + " seconds")
-  intervalObj = setInterval(checkStates, interval * 1000)
-  checkStates()
+  interval = adapter.config.polling || 60;
+  
+  adapter.log.info("setting interval to " + interval + " seconds");
+  intervalObj = setInterval(checkStates, interval * 1000);
+  checkStates();
 
 });
