@@ -21,7 +21,7 @@ Install it from a shell. CD into /opt/iobroker and then
 
 or, install it as a custom adapter from the admin-ui:
 
-![custom adapter](docs/de/img/install_mystrom.png)
+![custom adapter](install_mystrom.jpg)
 
 
 The adapter should then be in the admin pages's list.
