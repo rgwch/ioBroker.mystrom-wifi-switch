@@ -31,10 +31,13 @@ That's all. If you have several switches, just create several instances.
 
 ## Use
 
-Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts 
-(and will always be 0 if  switchState is false, of course)
+Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course)
 
 SwitchState is writeable.
+
+#### 0.8.3
+
+* (rgwch) changed name to mystrom-wifi-switch, since no other mystrom devices are supported by now.
 
 #### 0.7.0
 
