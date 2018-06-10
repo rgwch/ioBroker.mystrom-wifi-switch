@@ -1,4 +1,4 @@
-![Logo](admin/mystrom.png)
+![Logo](admin/mystrom-wifi-switch.png)
 
 # ioBroker.mystrom-wifi-switch
 
