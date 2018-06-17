@@ -1,11 +1,20 @@
 {
     "common": {
         "name": "mystrom-wifi-switch",
-        "version": "0.8.1",
+        "version": "0.9.0",
         "authors":[
             "name rgw@elexis.ch"
         ],
+        "materialize": true,
         "news": {
+          "0.8.3":{
+              "en": "bugfixes, https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/3",
+              "de": "Bugfix" 
+          },
+            "0.8.2":{
+                "en": "rename to mystrom-wifi-switch",
+                "de": "Umbenennen mystrom nach mystrom-wifi-switch"
+            },
             "0.8.1":{
                 "en": "Bugfix",
                 "de": "Fehlerkorrektur" 
@@ -35,22 +44,22 @@
                 "nl": "Eerste release"
             }
         },
-        "title": "MyStrom Switch",
+        "title": "MyStrom Wifi Switch",
         "desc": {
             "en": "ioBroker mystrom Switch Adapter",
             "de": "ioBroker Mystrom Switch Adapter",
             "ru": "ioBroker Mystrom драйвер как образец",
             "pt": "Modelo de adaptador para o ioBroker",
             "fr": "ioBroker adaptateur modèle",
-            "nl": "ioBroker Mystrom Adapter"
+            "nl": "ioBroker Mystrom SwitchAdapter"
         },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
-        "icon": "mystrom.png",
+        "icon": "mystrom-wifi-switch.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom/master/admin/mystrom.png",
+        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.png",
         "keywords": ["mystrom", "iobroker"],
-        "readme": "https://github.com/rgwch/ioBroker.mystrom/blob/master/README.md",
+        "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
         "loglevel": "info",
         "type": "hardware",
         "restartAdapters": ["vis"]

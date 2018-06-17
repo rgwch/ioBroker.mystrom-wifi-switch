@@ -1,7 +1,7 @@
-![Logo](admin/mystrom.png)
+![Logo](admin/mystrom-wifi-switch.png)
 
-# ioBroker.mystrom
-=================
+# ioBroker.mystrom-wifi-switch
+
 
 
 Note: This is forked and derived from the ioBroker adapter template. So there'll be things from the original creators left.
@@ -17,11 +17,11 @@ This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to
 This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list,
 Install it from a shell. CD into /opt/iobroker and then
 
-    npm install https://github.com/rgwch/ioBroker.mystrom/tarball/master
+    npm install https://github.com/rgwch/ioBroker.mystrom-wifi-switch/tarball/master
 
 or, install it as a custom adapter from the admin-ui:
 
-![custom adapter](docs/de/img/install_mystrom.png)
+![custom adapter](install_mystrom.jpg)
 
 
 The adapter should then be in the admin pages's list.
@@ -31,10 +31,13 @@ That's all. If you have several switches, just create several instances.
 
 ## Use
 
-Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts 
-(and will always be 0 if  switchState is false, of course)
+Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course)
 
 SwitchState is writeable.
+
+#### 0.8.3
+
+* (rgwch) changed name to mystrom-wifi-switch, since no other mystrom devices are supported by now.
 
 #### 0.7.0
 
@@ -58,7 +61,7 @@ SwitchState is writeable.
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 rgwch <rgw@rgw.ch>
+Copyright (c) 2017-2018 rgwch <rgw@rgw.ch>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,6 +1,6 @@
 // Dictionary (systemDictionary is global variable from adapter-settings.js)
 systemDictionary = {
-	"mystrom adapter settings": {"de": "Mystrom Adapter einstellungen"},
+	"mystrom adapter settings": {"de": "Mystrom Wifi Switch Adapter einstellungen"},
 	"url":                       {"en": "IP Address", "de": "IP Adresse"},
 	"polling":	{"de": "Abfrage-Intervall", "en": "polling interval"},
 	"on save adapter restarts with new config immediately": {
