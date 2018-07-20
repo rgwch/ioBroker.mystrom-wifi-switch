@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mystrom-wifi-switch",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "ioBroker mystrom  wifi switch Adapter",
   "author": {
     "name": "rgwch",
