@@ -5,7 +5,6 @@
         "authors":[
             "name rgw@elexis.ch"
         ],
-        "materialize": true,
         "news": {
           "0.10.0":{
             "en": "added admin/index_m.html"
@@ -59,16 +58,17 @@
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "mystrom-wifi-switch.png",
+        "materialize": true,
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.png",
         "keywords": ["mystrom", "iobroker"],
         "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
         "loglevel": "info",
-        "type": "hardware",
-        "restartAdapters": ["vis"]
+        "type": "hardware"
     },
     "native": {
-        "url": "192.168.1.111"
+        "url": "192.168.1.111",
+        "polling": 90
     },
     "objects": [
 
