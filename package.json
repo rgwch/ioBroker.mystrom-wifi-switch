@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mystrom-wifi-switch",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "ioBroker mystrom  wifi switch Adapter",
   "author": {
     "name": "rgwch",
@@ -10,7 +10,11 @@
     {
       "name": "rgwch",
       "email": "rgw@elexis.ch"
-    }
+    },
+    {
+      "name": "hhindriks",
+      "email": "hajo.hindriks@gmail.com"
+    }    
   ],
   "homepage": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch",
   "license": "MIT",
