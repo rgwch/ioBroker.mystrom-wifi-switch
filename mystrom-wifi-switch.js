@@ -28,33 +28,41 @@
  */
 
 /*
- WIFI SWITCH – REST API
+WIFI SWITCH – REST API
 
- The myStrom WiFi Switch offers a REST API (REST = representational State Transfer).
- The interface allows you to access/control the switch directly from your local network independently from myStrom -
- you don’t need a myStrom account or the myStrom app.
- With those rules you can integrate the switch in almost any environment.
+The myStrom WiFi Switch offers a REST API (REST = representational State Transfer).
+The interface allows you to access/control the switch directly from your local network independently from myStrom - you don’t need a myStrom account or the myStrom app.
+With those rules you can integrate the switch in almost any environment.
 
- Important Note
- The interface is transparent and has no authentication. If someone has access to your local network,
- they will be able to control your switch.
- Please apply strong security mechanisms to protect your network.
+Important Note
+The interface is transparent and has no authentication. If someone has access to your local network, they will be able to control your switch.
+Please apply strong security mechanisms to protect your network.
 
- Set State
- ON – http://[IP]/relay?state=1
- OFF – http://[IP]/relay?state=0
- TOGGLE – http://[IP]/toggle
+Set State
+ON – http://[IP]/relay?state=1
+OFF – http://[IP]/relay?state=0
+TOGGLE – http://[IP]/toggle
 
- Get Values
- http://[IP]/report
+Get Values
+http://[IP]/report
 
- Response
- {
- "power":	0,
- "relay":	false
- }
+Response
+{
+        "power":        0,
+        "relay":        false
+}
 
- [IP] – IP Address of your Switch e.g. 192.168.1.99
+Get Temp
+http://[IP]/temp
+
+Response
+{
+        "measured":        43.562500,
+        "compensation":        21,
+        "compensated":        22.562500
+}
+
+[IP] – IP Address of your Switch e.g. 192.168.1.99
  */
 
 /* jshint -W097 */// jshint strict:false
@@ -83,10 +91,9 @@ adapter.on('unload', function (callback) {
       clearInterval(intervalObj)
     }
     adapter.log.info('cleaned everything up...');
-    callback();
   } catch (e) {
-    callback();
   }
+  callback();
 });
 
 
@@ -111,6 +118,7 @@ adapter.on('stateChange', function (id, state) {
 
 function checkStates() {
   var url = adapter.config.url;
+  //Get report
   request("http://" + url + "/report", function (error, response, body) {
     if (error) {
       adapter.log.error(error)
@@ -124,6 +132,18 @@ function checkStates() {
       if (total === undefined) total = 0;
       total = total + wattseconds / 3600;
       adapter.setState("total_energy", { val: total, ack: true });
+    }
+  });
+  //Get temp
+  request("http://" + url + "/temp", function (error, response, body) {
+    if (error) {
+      adapter.log.error(error)
+    } else {
+      adapter.log.debug(body)
+      var result = JSON.parse(body);
+      adapter.setState("temperature_measured", { val: result.measured, ack: true })
+      adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
+      adapter.setState("temperature", { val: result.compensated, ack: true })
     }
   });
 }
@@ -201,6 +221,52 @@ adapter.on('ready', function () {
     },
     native: {}
   });
+
+  /**
+   * Temperature as measured in the device
+   */
+  adapter.setObject('temperature_measured', {
+    type: 'state',
+    common: {
+      name: 'measured temperature',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
+    },
+    native: {}
+  });
+
+  /**
+   * Temperature compensation
+   */
+  adapter.setObject('temperature_compensation', {
+    type: 'state',
+    common: {
+      name: 'compensation of temperature',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
+    },
+    native: {}
+  });
+ 
+  /**
+   * Temperature, measured minus compensation
+   */
+  adapter.setObject('temperature', {
+    type: 'state',
+    common: {
+      name: 'temperature',
+      type: 'number',
+      read: true,
+      write: false,
+      role: 'value'
+    },
+    native: {}
+  });
+
 
   // in this adapter all states changes inside the adapters namespace are subscribed
   adapter.subscribeStates('*');
