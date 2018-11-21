@@ -35,11 +35,11 @@ Each instance will create a switchState and a switchPower object. SwitchState is
 
 SwitchState is writeable.
 
-###  1.0.0
+####  1.0.0
  
 * Added Datapoints for Temperature (Thanks to @hhindriks)
       
-###  0.10.0
+####  0.10.0
    
 * added admin/index_m.html (compatibility with Admin3)
          
