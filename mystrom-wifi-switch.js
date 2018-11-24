@@ -140,10 +140,16 @@ function checkStates() {
       adapter.log.error(error)
     } else {
       adapter.log.debug(body)
-      var result = JSON.parse(body);
-      adapter.setState("temperature_measured", { val: result.measured, ack: true })
-      adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
-      adapter.setState("temperature", { val: result.compensated, ack: true })
+      try {
+        console.log.debug(response.statusCode)
+        const result = JSON.parse(body);
+        adapter.setState("temperature_measured", { val: result.measured, ack: true })
+        adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
+        adapter.setState("temperature", { val: result.compensated, ack: true })
+      } catch (err) {
+        // adapter.log.debug(err)
+        // obviously it was no valid JSON
+      }
     }
   });
 }
@@ -251,7 +257,7 @@ adapter.on('ready', function () {
     },
     native: {}
   });
- 
+
   /**
    * Temperature, measured minus compensation
    */
