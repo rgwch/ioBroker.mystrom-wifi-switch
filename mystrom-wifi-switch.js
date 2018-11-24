@@ -134,18 +134,22 @@ function checkStates() {
       adapter.setState("total_energy", { val: total, ack: true });
     }
   });
-  //Get temp
-  request("http://" + url + "/temp", function (error, response, body) {
-    if (error) {
-      adapter.log.error(error)
-    } else {
-      adapter.log.debug(body)
-      var result = JSON.parse(body);
-      adapter.setState("temperature_measured", { val: result.measured, ack: true })
-      adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
-      adapter.setState("temperature", { val: result.compensated, ack: true })
-    }
-  });
+  //Get temperature
+  try {
+    request("http://" + url + "/temp", function (error, response, body) {
+      if (error) {
+        adapter.log.error(error)
+      } else {
+        adapter.log.debug(body)
+        var result = JSON.parse(body);
+        adapter.setState("temperature_measured", { val: result.measured, ack: true })
+        adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
+        adapter.setState("temperature", { val: result.compensated, ack: true })
+      }
+    });    
+  } catch (error) {
+    // Switches V1 don't support the temp call
+  }
 }
 
 
