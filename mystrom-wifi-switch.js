@@ -118,6 +118,7 @@ adapter.on('stateChange', function (id, state) {
 
 function checkStates() {
   var url = adapter.config.url;
+  var doTemperature = adapter.config.doTemperature
   //Get report
   request("http://" + url + "/report", function (error, response, body) {
     if (error) {
@@ -135,7 +136,7 @@ function checkStates() {
     }
   });
   //Get temperature
-  try {
+  if (adapter.config.doTemperature) {
     request("http://" + url + "/temp", function (error, response, body) {
       if (error) {
         adapter.log.error(error)
@@ -146,9 +147,11 @@ function checkStates() {
         adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
         adapter.setState("temperature", { val: result.compensated, ack: true })
       }
-    });    
-  } catch (error) {
-    // Switches V1 don't support the temp call
+    });      
+  } else {
+    adapter.setState("temperature_measured", { val: 0.0, ack: true })
+    adapter.setState("temperature_compensation", { val: 0.0, ack: true })
+    adapter.setState("temperature", { val: 0.0, ack: true })   
   }
 }
 
@@ -196,6 +199,7 @@ adapter.on('ready', function () {
     },
     native: {}
   });
+
   /**
    * energy of the current day (Wh)
    */
