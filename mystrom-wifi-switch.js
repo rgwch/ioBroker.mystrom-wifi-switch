@@ -118,6 +118,7 @@ adapter.on('stateChange', function (id, state) {
 
 function checkStates() {
   var url = adapter.config.url;
+  var doTemperature = adapter.config.doTemperature
   //Get report
   request("http://" + url + "/report", function (error, response, body) {
     if (error) {
@@ -134,24 +135,28 @@ function checkStates() {
       adapter.setState("total_energy", { val: total, ack: true });
     }
   });
-  //Get temp
-  request("http://" + url + "/temp", function (error, response, body) {
-    if (error) {
-      adapter.log.error(error)
-    } else {
-      adapter.log.debug(body)
-      try {
-        console.log.debug(response.statusCode)
-        const result = JSON.parse(body);
-        adapter.setState("temperature_measured", { val: result.measured, ack: true })
-        adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
-        adapter.setState("temperature", { val: result.compensated, ack: true })
-      } catch (err) {
-        // adapter.log.debug(err)
-        // obviously it was no valid JSON
+  //Get temperature
+  if (adapter.config.doTemperature) {
+    request("http://" + url + "/temp", function (error, response, body) {
+      if (error) {
+        adapter.log.error(error)
+      } else {
+        try {
+          adapter.log.debug(body)
+          var result = JSON.parse(body);
+          adapter.setState("temperature_measured", { val: result.measured, ack: true })
+          adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
+          adapter.setState("temperature", { val: result.compensated, ack: true })
+        } catch (err) {
+          console.log.info("error when trying t read temperature")
+        }
       }
-    }
-  });
+    });
+  } else {
+    adapter.setState("temperature_measured", { val: 0.0, ack: true })
+    adapter.setState("temperature_compensation", { val: 0.0, ack: true })
+    adapter.setState("temperature", { val: 0.0, ack: true })
+  }
 }
 
 
@@ -198,6 +203,7 @@ adapter.on('ready', function () {
     },
     native: {}
   });
+
   /**
    * energy of the current day (Wh)
    */
