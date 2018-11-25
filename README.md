@@ -35,6 +35,15 @@ Each instance will create a switchState and a switchPower object. SwitchState is
 
 SwitchState is writeable.
 
+####  1.0.0
+ 
+* Added Datapoints for Temperature (Thanks to @hhindriks)
+      
+####  0.10.0
+   
+* added admin/index_m.html (compatibility with Admin3)
+         
+        
 #### 0.8.3
 
 * (rgwch) changed name to mystrom-wifi-switch, since no other mystrom devices are supported by now.

@@ -259,7 +259,7 @@ adapter.on('ready', function () {
     },
     native: {}
   });
- 
+
   /**
    * Temperature, measured minus compensation
    */
