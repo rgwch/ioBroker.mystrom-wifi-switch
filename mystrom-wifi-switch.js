@@ -127,7 +127,7 @@ function checkStates() {
 
       //Get temperature
       if (result.hasOwnProperty('temperature')) { 
-        adapter.setState("temperature", { val: result.compensated, ack: true })
+        adapter.setState("temperature", { val: result.temperature, ack: true })
       } else {
         adapter.setState("temperature", { val: 0.0, ack: true })
       }           
