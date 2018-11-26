@@ -118,6 +118,7 @@ adapter.on('stateChange', function (id, state) {
 
 function checkStates() {
   var url = adapter.config.url;
+  var doTemperature = adapter.config.doTemperature
   //Get report
   request("http://" + url + "/report", function (error, response, body) {
     if (error) {
@@ -134,23 +135,28 @@ function checkStates() {
       adapter.setState("total_energy", { val: total, ack: true });
     }
   });
-  //Get temp
-  try {
+  //Get temperature
+  if (adapter.config.doTemperature) {
     request("http://" + url + "/temp", function (error, response, body) {
       if (error) {
         adapter.log.error(error)
       } else {
-        adapter.log.debug(body)
-        var result = JSON.parse(body);
-        adapter.setState("temperature_measured", { val: result.measured, ack: true })
-        adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
-        adapter.setState("temperature", { val: result.compensated, ack: true })
+        try {
+          adapter.log.debug(body)
+          var result = JSON.parse(body);
+          adapter.setState("temperature_measured", { val: result.measured, ack: true })
+          adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
+          adapter.setState("temperature", { val: result.compensated, ack: true })
+        } catch (err) {
+          console.log.info("error when trying t read temperature")
+        }
       }
-    });    
-  } catch (error) {
-    // Switches V1 don't support the temp call
+    });
+  } else {
+    adapter.setState("temperature_measured", { val: 0.0, ack: true })
+    adapter.setState("temperature_compensation", { val: 0.0, ack: true })
+    adapter.setState("temperature", { val: 0.0, ack: true })
   }
-
 }
 
 
@@ -197,6 +203,7 @@ adapter.on('ready', function () {
     },
     native: {}
   });
+
   /**
    * energy of the current day (Wh)
    */
@@ -256,7 +263,7 @@ adapter.on('ready', function () {
     },
     native: {}
   });
- 
+
   /**
    * Temperature, measured minus compensation
    */

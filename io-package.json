@@ -1,15 +1,14 @@
 {
     "common": {
         "name": "mystrom-wifi-switch",
-        "version": "0.11.0",
+        "version": "1.0.2",
         "authors":[
-            "name rgw@elexis.ch",
-            "name hajo.hindriks@gmail.com"
+            "name rgw@elexis.ch"
         ],
-        "news": {
-            "0.11.0":{
-                "en": "added datapoints for temperature"
-              },            
+        "news":{
+          "1.0.0":{
+            "en": "Added Datapoints for Temperature (Thanks to @hhindriks"
+          }, 
           "0.10.0":{
             "en": "added admin/index_m.html"
           },
