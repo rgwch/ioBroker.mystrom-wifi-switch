@@ -126,7 +126,7 @@ function checkStates() {
       adapter.setState("total_energy", { val: total, ack: true });
 
       //Get temperature
-      if (result.hasOwnProperty('temparature')) { 
+      if (result.hasOwnProperty('temperature')) { 
         adapter.setState("temperature", { val: result.compensated, ack: true })
       } else {
         adapter.setState("temperature", { val: 0.0, ack: true })
