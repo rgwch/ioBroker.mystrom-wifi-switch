@@ -49,17 +49,8 @@ http://[IP]/report
 Response
 {
         "power":        0,
-        "relay":        false
-}
-
-Get Temp
-http://[IP]/temp
-
-Response
-{
-        "measured":        43.562500,
-        "compensation":        21,
-        "compensated":        22.562500
+        "relay":        false,
+        "temperature":  3.2319431304931641        
 }
 
 [IP] – IP Address of your Switch e.g. 192.168.1.99
@@ -133,32 +124,16 @@ function checkStates() {
       if (total === undefined) total = 0;
       total = total + wattseconds / 3600;
       adapter.setState("total_energy", { val: total, ack: true });
+
+      //Get temperature
+      if (result.hasOwnProperty('temperature')) { 
+        adapter.setState("temperature", { val: result.temperature, ack: true })
+      } else {
+        adapter.setState("temperature", { val: 0.0, ack: true })
+      }           
     }
   });
-  //Get temperature
-  if (adapter.config.doTemperature) {
-    request("http://" + url + "/temp", function (error, response, body) {
-      if (error) {
-        adapter.log.error(error)
-      } else {
-        try {
-          adapter.log.debug(body)
-          var result = JSON.parse(body);
-          adapter.setState("temperature_measured", { val: result.measured, ack: true })
-          adapter.setState("temperature_compensation", { val: result.compensation, ack: true })
-          adapter.setState("temperature", { val: result.compensated, ack: true })
-        } catch (err) {
-          console.log.info("error when trying t read temperature")
-        }
-      }
-    });
-  } else {
-    adapter.setState("temperature_measured", { val: 0.0, ack: true })
-    adapter.setState("temperature_compensation", { val: 0.0, ack: true })
-    adapter.setState("temperature", { val: 0.0, ack: true })
-  }
 }
-
 
 // is called when databases are connected and adapter received configuration.
 // start here!
@@ -235,37 +210,7 @@ adapter.on('ready', function () {
   });
 
   /**
-   * Temperature as measured in the device
-   */
-  adapter.setObject('temperature_measured', {
-    type: 'state',
-    common: {
-      name: 'measured temperature',
-      type: 'number',
-      read: true,
-      write: false,
-      role: 'value'
-    },
-    native: {}
-  });
-
-  /**
-   * Temperature compensation
-   */
-  adapter.setObject('temperature_compensation', {
-    type: 'state',
-    common: {
-      name: 'compensation of temperature',
-      type: 'number',
-      read: true,
-      write: false,
-      role: 'value'
-    },
-    native: {}
-  });
-
-  /**
-   * Temperature, measured minus compensation
+   * Temperature
    */
   adapter.setObject('temperature', {
     type: 'state',
