@@ -5,6 +5,7 @@
         "authors":[
             "name rgw@elexis.ch"
         ],
+        "license": "MIT",
         "news":{
           "1.0.0":{
             "en": "Added Datapoints for Temperature (Thanks to @hhindriks"
