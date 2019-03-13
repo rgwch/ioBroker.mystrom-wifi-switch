@@ -1,7 +1,7 @@
 ![Logo](admin/mystrom-wifi-switch.png)
 
 # ioBroker.mystrom-wifi-switch
-
+![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-stable.svg) 
 
 
 Note: This is forked and derived from the ioBroker adapter template. So there'll be things from the original creators left.
