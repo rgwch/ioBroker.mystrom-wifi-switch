@@ -35,6 +35,8 @@ Each instance will create a switchState and a switchPower object. SwitchState is
 
 SwitchState is writeable.
 
+## Changelog
+
 ####  1.0.0
  
 * Added Datapoints for Temperature (Thanks to @hhindriks)
