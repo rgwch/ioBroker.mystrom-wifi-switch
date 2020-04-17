@@ -37,6 +37,12 @@ SwitchState is writeable.
 
 ## Changelog
 
+#### 1.1.1
+
+* Update Node 12, small fixes
+* Corrected size of logo
+* updated copyrights
+
 ####  1.0.0
  
 * Added Datapoints for Temperature (Thanks to @hhindriks)
