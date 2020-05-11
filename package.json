@@ -25,18 +25,17 @@
     "url": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch"
   },
   "dependencies": {
-    "request": "^2.81.0",
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^1.0.3",
+    "lodash": "^4.17.15",
+    "request": "^2.81.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-replace": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-jscs": "^3.0.1",
-    "grunt-http": "^2.2.0",
-    "mocha": "^6.0.2",
+    "@iobroker/testing": "^1.1.10",
     "chai": "^4.2.0",
-    "@iobroker/testing": "^1.1.10"
+    "grunt": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-http": "^2.2.0",
+    "mocha": "^6.0.2"
   },
   "main": "mystrom-wifi-switch.js",
   "scripts": {
