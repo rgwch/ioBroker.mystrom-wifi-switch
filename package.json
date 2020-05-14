@@ -35,7 +35,7 @@
     "grunt": "^1.1.0",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-http": "^2.2.0",
-    "mocha": "^6.0.2"
+    "mocha": "^6.2.3"
   },
   "main": "mystrom-wifi-switch.js",
   "scripts": {
