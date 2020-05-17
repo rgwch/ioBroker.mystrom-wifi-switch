@@ -20,10 +20,13 @@ This adapter is not part of the official ioBroker distribution. So it will not s
 
 [![NPM](https://nodei.co/npm/iobroker.mystrom-wifi-switch.png)](https://nodei.co/npm/iobroker.mystrom-wifi-switch/)
 
-or as a custom adapter from the admin-ui:
+or as a custom adapter from the admin-ui. Make sure to select "Beliebig" event though it's located at Github:
 
-![custom adapter](install_mystrom.jpg)
+![custom adapter](install_1.jpg)
 
+Find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-switch/releases> and copy/paste the address of the .tar.gz link.
+
+Read the warning and click "install" if you agree.
 
 The adapter should then be in the admin pages's list.
 
