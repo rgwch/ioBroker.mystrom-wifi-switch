@@ -1,48 +1,67 @@
 {
   "name": "iobroker.mystrom-wifi-switch",
-  "version": "1.1.2",
-  "description": "ioBroker mystrom  wifi switch Adapter",
+  "version": "2.0.0",
+  "description": "control mystrom switches",
   "author": {
     "name": "rgwch",
-    "email": "rgw@elexis.ch"
+    "email": "rgw@rgw.ch"
   },
-  "contributors": [
-    {
-      "name": "rgwch",
-      "email": "rgw@elexis.ch"
-    }
-  ],
   "homepage": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch",
   "license": "MIT",
   "keywords": [
-    "ioBroker",
-    "mystrom",
-    "Smart Home",
-    "home automation"
+    "iobroker",
+    "mystrom"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3",
-    "lodash": "^4.17.15",
-    "request": "^2.81.0"
+    "@iobroker/adapter-core": "^2.4.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@iobroker/testing": "^1.1.10",
+    "@iobroker/testing": "^2.2.0",
+    "@types/chai": "^4.2.11",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/gulp": "^4.0.6",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^12.12.39",
+    "@types/node-fetch": "^2.5.7",
+    "@types/proxyquire": "^1.3.28",
+    "@types/sinon": "^9.0.1",
+    "@types/sinon-chai": "^3.2.4",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "axios": "^0.19.2",
     "chai": "^4.2.0",
-    "grunt": "^1.1.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-http": "^2.2.0",
-    "mocha": "^6.2.3"
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.0.0",
+    "gulp": "^4.0.2",
+    "http-server": "^0.12.3",
+    "mocha": "^7.1.2",
+    "proxyquire": "^2.1.3",
+    "rimraf": "^3.0.2",
+    "sinon": "^8.1.1",
+    "sinon-chai": "^3.5.0",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.2"
   },
-  "main": "mystrom-wifi-switch.js",
+  "main": "build/main.js",
   "scripts": {
-    "test": "npm run test:package && npm run test:unit",
+    "prebuild": "rimraf ./build",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build": "npm run build:ts",
+    "watch:ts": "tsc -p tsconfig.build.json --watch",
+    "watch": "npm run watch:ts",
+    "serve": "npm run build:ts && npm pack && http-server -c-1",
+    "test:ts": "mocha --opts test/mocha.custom.opts",
     "test:package": "mocha test/package --exit",
     "test:unit": "mocha test/unit --exit",
-    "test:integration": "mocha test/integration --exit"
+    "test:integration": "mocha test/integration --exit",
+    "test": "npm run test:ts && npm run test:package",
+    "lint": "eslint --ext .ts src"
   },
   "bugs": {
     "url": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues"
