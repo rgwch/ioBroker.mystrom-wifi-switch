@@ -32,7 +32,7 @@ That's all. If you have several switches, just create several instances.
 
 ## Use
 
-Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course)
+Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course). Newer models of the switch feature an additional temperature indicator. With older switches, this will always be 0.
 
 SwitchState is writeable.
 
