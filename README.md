@@ -1,11 +1,10 @@
-![Logo](admin/mystrom-wifi-switch.png)
+![Logo](admin/mystrom-wifi-switch.jpg)
 
 # ioBroker.mystrom-wifi-switch
 ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-stable.svg) 
 
 
-Note: This is forked and derived from the ioBroker adapter template. So there'll be things from the original creators left.
-Thanks to the ioBroker people!
+Note: This is a complete rewrite of the original adapter v1.x, now based on the great [@iobroker/create-adapter](https://github.com/ioBroker/create-adapter) tool.
 
 
 ## What it is
@@ -36,6 +35,10 @@ Each instance will create a switchState and a switchPower object. SwitchState is
 SwitchState is writeable.
 
 ## Changelog
+
+#### 2.0.0
+
+* complete rewrite in typescript, based on @iobroker/create-adapter
 
 #### 1.1.1
 

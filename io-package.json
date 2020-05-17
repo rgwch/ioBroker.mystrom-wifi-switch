@@ -1,83 +1,144 @@
 {
-    "common": {
-        "name": "mystrom-wifi-switch",
-        "version": "1.1.2",
-        "authors":[
-            "name rgw@elexis.ch"
-        ],
-        "license": "MIT",
-        "news":{
-          "1.1.0":{ 
-                "en": "Additions by ioBroker people to adjust to ioBroker changes"
-          } , 
-          "1.0.0":{
-            "en": "Added Datapoints for Temperature (Thanks to @hhindriks"
-          }, 
-          "0.10.0":{
-            "en": "added admin/index_m.html"
-          },
-          "0.8.3":{
-              "en": "bugfixes, https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/3",
-              "de": "Bugfix" 
-          },
-            "0.8.2":{
-                "en": "rename to mystrom-wifi-switch",
-                "de": "Umbenennen mystrom nach mystrom-wifi-switch"
-            },
-            "0.8.1":{
-                "en": "Bugfix",
-                "de": "Fehlerkorrektur" 
-            },
-            "0.8.0":{
-                "en": "energy consumption added",
-                "de": "Energieverbrauchsanzeige beigefügt"
-            },
-            "0.6.0":{
-                "en": "template adapted to myStrom Switch",
-                "de": "Tenplate an myStrom Schalter angepasst"
-            },
-            "0.5.0": {
-                "en": "beta version",
-                "de": "Betaversion",
-                "ru": "Бета версия",
-                "pt": "Versão beta",
-                "fr": "Version bêta",
-                "nl": "Beta versie"
-            },
-            "0.0.1": {
-                "en": "initial adapter",
-                "de": "Initiale Version",
-                "ru": "Первоначальный адаптер",
-                "pt": "Versão inicial",
-                "fr": "Version initiale",
-                "nl": "Eerste release"
-            }
-        },
-        "title": "MyStrom Wifi Switch",
-        "desc": {
-            "en": "ioBroker mystrom Switch Adapter",
-            "de": "ioBroker Mystrom Switch Adapter",
-            "ru": "ioBroker Mystrom драйвер как образец",
-            "pt": "Modelo de adaptador para o ioBroker",
-            "fr": "ioBroker adaptateur modèle",
-            "nl": "ioBroker Mystrom SwitchAdapter"
-        },
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "icon": "mystrom-wifi-switch.png",
-        "materialize": true,
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.png",
-        "keywords": ["mystrom", "iobroker"],
-        "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
-        "loglevel": "info",
-        "type": "hardware"
+  "common": {
+    "name": "mystrom-wifi-switch",
+    "version": "2.0.0",
+    "news": {
+      "2.0.0": {
+        "en": "complete redesign",
+        "de": "komplette Neugestaltung",
+        "ru": "полный редизайн",
+        "pt": "redesenho completo",
+        "nl": "compleet herontwerp",
+        "fr": "refonte complète",
+        "it": "riprogettazione completa",
+        "es": "rediseño completo",
+        "pl": "całkowite przeprojektowanie",
+        "zh-cn": "完全重新设计"
+      },
+      "1.1.0": {
+        "en": "Additions by ioBroker people to adjust to ioBroker changes"
+      },
+      "1.0.0": {
+        "en": "Added Datapoints for Temperature (Thanks to @hhindriks"
+      },
+      "0.10.0": {
+        "en": "added admin/index_m.html"
+      },
+      "0.8.3": {
+        "en": "bugfixes, https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/3",
+        "de": "Bugfix"
+      },
+      "0.8.2": {
+        "en": "rename to mystrom-wifi-switch",
+        "de": "Umbenennen mystrom nach mystrom-wifi-switch"
+      },
+      "0.8.1": {
+        "en": "Bugfix",
+        "de": "Fehlerkorrektur"
+      },
+      "0.8.0": {
+        "en": "energy consumption added",
+        "de": "Energieverbrauchsanzeige beigefügt"
+      },
+      "0.6.0": {
+        "en": "template adapted to myStrom Switch",
+        "de": "Tenplate an myStrom Schalter angepasst"
+      },
+      "0.5.0": {
+        "en": "beta version",
+        "de": "Betaversion",
+        "ru": "Бета версия",
+        "pt": "Versão beta",
+        "fr": "Version bêta",
+        "nl": "Beta versie"
+      },
+      "0.0.1": {
+        "en": "initial adapter",
+        "de": "Initiale Version",
+        "ru": "Первоначальный адаптер",
+        "pt": "Versão inicial",
+        "fr": "Version initiale",
+        "nl": "Eerste release"
+      }
     },
-    "native": {
-        "url": "192.168.1.111",
-        "polling": 90
+    "title": "MyStrom WiFi Switch",
+    "titleLang": {
+      "en": "MyStrom WiFi Switch",
+      "de": "MyStrom WiFi Switch",
+      "ru": "MyStrom WiFi Switch",
+      "pt": "MyStrom WiFi Switch",
+      "nl": "MyStrom WiFi-schakelaar",
+      "fr": "Commutateur WiFi MyStrom",
+      "it": "MyStrom WiFi Switch",
+      "es": "Conmutador WiFi MyStrom",
+      "pl": "MyStrom WiFi Switch",
+      "zh-cn": "MyStrom WiFi开关"
     },
-    "objects": [
-
+    "desc": {
+      "en": "control mystrom switches",
+      "de": "MyStrom Switches steuern",
+      "ru": "управление Mystrom выключатели",
+      "pt": "controlar interruptores mystrom",
+      "nl": "controle mystrom schakelaars",
+      "fr": "contrôler les commutateurs mystrom",
+      "it": "controlla gli switch mystrom",
+      "es": "controlar los conmutadores mystrom",
+      "pl": "kontroluj przełączniki mistrom",
+      "zh-cn": "控制mystrom开关"
+    },
+    "authors": [
+      "rgwch <rgw@rgw.ch>"
+    ],
+    "keywords": [
+      "iobroker",
+      "mystrom"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "build/main.js",
+    "icon": "mystrom-wifi-switch.jpg",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.jpg",
+    "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "iot-systems",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "materialize": true,
+    "dependencies": [
+      {
+        "js-controller": ">=1.4.2"
+      }
     ]
+  },
+  "native": {
+    "url": "",
+    "pollingInterval": "180"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
