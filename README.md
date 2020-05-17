@@ -1,7 +1,10 @@
 ![Logo](admin/mystrom-wifi-switch.png)
+[![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-switch.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-switch)
+[![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch)
+
+![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-stable.svg) 
 
 # ioBroker.mystrom-wifi-switch
-![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-stable.svg) 
 
 
 Note: This is forked and derived from the ioBroker adapter template. So there'll be things from the original creators left.
@@ -14,12 +17,11 @@ This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to
 
 ## Install
 
-This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list,
-Install it from a shell. CD into /opt/iobroker and then
+This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list. You can install it either directly from NPM:
 
-    npm install https://github.com/rgwch/ioBroker.mystrom-wifi-switch/tarball/master
+[![NPM](https://nodei.co/npm/iobroker.mystrom-wifi-switch.png)](https://nodei.co/npm/iobroker.mystrom-wifi-switch/)
 
-or, install it as a custom adapter from the admin-ui:
+or as a custom adapter from the admin-ui:
 
 ![custom adapter](install_mystrom.jpg)
 
