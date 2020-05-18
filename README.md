@@ -2,7 +2,7 @@
 [![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-switch.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-switch)
 [![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch)
 
-![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-stable.svg) 
+![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) 
 
 # ioBroker.mystrom-wifi-switch
 

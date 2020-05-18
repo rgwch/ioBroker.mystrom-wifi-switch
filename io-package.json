@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "mystrom-wifi-switch",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "news": {
+      "2.0.1":{
+        "en": "better upgrade of url config from earlier versions",
+        "de": "Besseres Upgrade der URL-Konfiguration von früheren Versionen",
+        "ru": "лучшее обновление конфига url с более ранних версий",
+        "pt": "melhor atualização da configuração de URL de versões anteriores",
+        "nl": "betere upgrade van url-configuratie van eerdere versies",
+        "fr": "meilleure mise à niveau de la configuration d'URL des versions antérieures",
+        "it": "migliore aggiornamento di url config dalle versioni precedenti",
+        "es": "Mejor actualización de la configuración de URL desde versiones anteriores",
+        "pl": "lepsza aktualizacja konfiguracji adresu URL z wcześniejszych wersji",
+        "zh-cn": "从早期版本更好地升级url配置"
+      },
       "2.0.0": {
         "en": "complete redesign",
         "de": "komplette Neugestaltung",
