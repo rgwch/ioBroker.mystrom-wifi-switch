@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "mystrom-wifi-switch",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "news": {
-      "2.0.1":{
+      "2.0.1": {
         "en": "better upgrade of url config from earlier versions",
         "de": "Besseres Upgrade der URL-Konfiguration von früheren Versionen",
         "ru": "лучшее обновление конфига url с более ранних версий",
@@ -108,9 +108,9 @@
     "license": "MIT",
     "platform": "Javascript/Node.js",
     "main": "build/main.js",
-    "icon": "mystrom-wifi-switch.jpg",
+    "icon": "mystrom-wifi-switch.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.jpg",
+    "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.png",
     "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
     "loglevel": "info",
     "mode": "daemon",
