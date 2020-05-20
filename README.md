@@ -20,7 +20,7 @@ This adapter is not part of the official ioBroker distribution. So it will not s
 
 [![NPM](https://nodei.co/npm/iobroker.mystrom-wifi-switch.png)](https://nodei.co/npm/iobroker.mystrom-wifi-switch/)
 
-or as a custom adapter from the admin-ui. Make sure to select "Beliebig" event though it's located at Github:
+or as a custom adapter from the admin-ui. Make sure to select "Beliebig" even though it's located at Github:
 
 ![custom adapter](install_1.jpg)
 
