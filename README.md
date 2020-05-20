@@ -1,4 +1,4 @@
-![Logo](admin/mystrom-wifi-switch.jpg)
+![Logo](admin/mystrom-wifi-switch.png)
 [![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-switch.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-switch)
 [![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch)
 
