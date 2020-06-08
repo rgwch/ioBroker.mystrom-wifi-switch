@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "mystrom-wifi-switch",
-    "version": "2.0.1",
+    "version": "2.0.3",
     "news": {
-      "2.0.1": {
+      "2.0.3": {
         "en": "fix empty response error",
         "de": "Behebung eines leeren Antwortfehlers",
         "ru": "исправить пустую ошибку ответа",
@@ -14,6 +14,18 @@
         "es": "corregir error de respuesta vacía",
         "pl": "naprawić błąd pustej odpowiedzi",
         "zh-cn": "修复空响应错误"
+      },
+      "2.0.2": {
+        "en": "better upgrade of url config from earlier versions",
+        "de": "Besseres Upgrade der URL-Konfiguration von früheren Versionen",
+        "ru": "лучшее обновление конфига url с более ранних версий",
+        "pt": "melhor atualização da configuração de URL de versões anteriores",
+        "nl": "betere upgrade van url-configuratie van eerdere versies",
+        "fr": "meilleure mise à niveau de la configuration d'URL des versions antérieures",
+        "it": "migliore aggiornamento di url config dalle versioni precedenti",
+        "es": "Mejor actualización de la configuración de URL desde versiones anteriores",
+        "pl": "lepsza aktualizacja konfiguracji adresu URL z wcześniejszych wersji",
+        "zh-cn": "从早期版本更好地升级url配置"
       },
       "2.0.0": {
         "en": "complete redesign",
@@ -108,9 +120,9 @@
     "license": "MIT",
     "platform": "Javascript/Node.js",
     "main": "build/main.js",
-    "icon": "mystrom-wifi-switch.jpg",
+    "icon": "mystrom-wifi-switch.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.jpg",
+    "extIcon": "https://raw.githubusercontent.com/rgwch/ioBroker.mystrom-wifi-switch/master/admin/mystrom-wifi-switch.png",
     "readme": "https://github.com/rgwch/ioBroker.mystrom-wifi-switch/blob/master/README.md",
     "loglevel": "info",
     "mode": "daemon",

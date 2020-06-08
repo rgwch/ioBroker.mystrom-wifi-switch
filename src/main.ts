@@ -194,15 +194,20 @@ class MystromSwitch extends utils.Adapter {
 
 
   private async doFetch(addr: string): Promise<any> {
-    const url = this.config.url
-
+    let url = this.config.url
+    if (url.indexOf("://") == -1) {
+      url = "http://" + url
+    }
     this.log.info("Fetching " + url + addr)
     try {
       const response = await fetch(url + addr, { method: "get" })
       if (response.status == 200) {
-        const result = await response.json()
-        this.log.debug("got " + JSON.stringify(result))
-        return result
+        const text=await response.text()
+        this.log.debug("got: "+text)
+        if(text.length){
+          return JSON.parse(text)
+        }
+        return text
       } else {
         this.log.error("Error while fetching " + addr + ": " + response.status)
         this.setState("info.connection", false, true);

@@ -172,14 +172,20 @@ class MystromSwitch extends utils.Adapter {
     }
     doFetch(addr) {
         return __awaiter(this, void 0, void 0, function* () {
-            const url = this.config.url;
+            let url = this.config.url;
+            if (url.indexOf("://") == -1) {
+                url = "http://" + url;
+            }
             this.log.info("Fetching " + url + addr);
             try {
                 const response = yield node_fetch_1.default(url + addr, { method: "get" });
                 if (response.status == 200) {
-                    const result = yield response.json();
-                    this.log.debug("got " + JSON.stringify(result));
-                    return result;
+                    const text = yield response.text();
+                    this.log.debug("got: " + text);
+                    if (text.length) {
+                        return JSON.parse(text);
+                    }
+                    return text;
                 }
                 else {
                     this.log.error("Error while fetching " + addr + ": " + response.status);

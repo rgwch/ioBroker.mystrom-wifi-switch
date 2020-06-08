@@ -1,7 +1,10 @@
-![Logo](admin/mystrom-wifi-switch.jpg)
+![Logo](admin/mystrom-wifi-switch.png)
+[![NPM version](http://img.shields.io/npm/v/iobroker.mystrom-wifi-switch.svg)](https://www.npmjs.com/package/iobroker.mystrom-wifi-switch)
+[![Build Status](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch.svg?branch=master)](https://travis-ci.com/rgwch/ioBroker.mystrom-wifi-switch)
+
+![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) 
 
 # ioBroker.mystrom-wifi-switch
-![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-installed.svg) ![Number of Installations](http://iobroker.live/badges/mystrom-wifi-switch-stable.svg) 
 
 
 Note: This is a complete rewrite of the original adapter v1.x, now based on the great [@iobroker/create-adapter](https://github.com/ioBroker/create-adapter) tool.
@@ -13,15 +16,17 @@ This adapter connects [myStrom WiFi Switches](https://mystrom.ch/wifi-switch) to
 
 ## Install
 
-This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list,
-Install it from a shell. CD into /opt/iobroker and then
+This adapter is not part of the official ioBroker distribution. So it will not show up in ioBroker admin's adapter list. You can install it either directly from NPM:
 
-    npm install https://github.com/rgwch/ioBroker.mystrom-wifi-switch/tarball/master
+[![NPM](https://nodei.co/npm/iobroker.mystrom-wifi-switch.png)](https://nodei.co/npm/iobroker.mystrom-wifi-switch/)
 
-or, install it as a custom adapter from the admin-ui:
+or as a custom adapter from the admin-ui. Make sure to select "Beliebig" even though it's located at Github:
 
-![custom adapter](install_mystrom.jpg)
+![custom adapter](install_1.jpg)
 
+Find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-switch/releases> and copy/paste the address of the .tar.gz link.
+
+Read the warning and click "install" if you agree.
 
 The adapter should then be in the admin pages's list.
 
@@ -30,7 +35,7 @@ That's all. If you have several switches, just create several instances.
 
 ## Use
 
-Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course)
+Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course). Newer models of the switch feature an additional temperature indicator. With older switches, this will always be 0.
 
 SwitchState is writeable.
 
@@ -100,3 +105,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+## More like this
+
+* ['MyStrom Dingz' Adapter](http://github.com/rgwch/ioBroker.dingz)
+* ['MyStrom WiFi Button' Adapter](http://github.com/rgwch/ioBroker.mystrom-wifi-button)
+* ['MyStrom WiFi Bulb' Adapter](http://github.com/rgwch/ioBroker.mystrom-wifi-bulb)
