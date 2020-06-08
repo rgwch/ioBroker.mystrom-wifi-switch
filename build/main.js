@@ -115,7 +115,7 @@ class MystromSwitch extends utils.Adapter {
             this.interval = Math.max(this.interval, 10);
             if (this.checkStates()) {
                 this.log.info("setting interval to " + this.interval + " seconds");
-                this.intervalObj = setInterval(this.checkStates, this.interval * 1000);
+                this.intervalObj = setInterval(this.checkStates.bind(this), this.interval * 1000);
                 this.setStateAsync("info.connection", true, true);
             }
         });
@@ -123,8 +123,10 @@ class MystromSwitch extends utils.Adapter {
     checkStates() {
         return __awaiter(this, void 0, void 0, function* () {
             const url = this.config.url;
+            this.log.info("checkstates url " + url);
             //Get report
             const result = yield this.doFetch("/report");
+            this.log.info("result " + JSON.stringify(result));
             if (result) {
                 yield this.setStateAsync("switchState", result.relay, true);
                 yield this.setStateAsync("power", result.power, true);
@@ -175,15 +177,9 @@ class MystromSwitch extends utils.Adapter {
             try {
                 const response = yield node_fetch_1.default(url + addr, { method: "get" });
                 if (response.status == 200) {
-                    if (response.size) {
-                        const result = yield response.json();
-                        this.log.debug("got " + JSON.stringify(result));
-                        return result;
-                    }
-                    else {
-                        this.log.debug("ok, empty result");
-                        return { "status": "ok" };
-                    }
+                    const result = yield response.json();
+                    this.log.debug("got " + JSON.stringify(result));
+                    return result;
                 }
                 else {
                     this.log.error("Error while fetching " + addr + ": " + response.status);

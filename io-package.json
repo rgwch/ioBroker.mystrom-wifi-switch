@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "mystrom-wifi-switch",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "news": {
+      "2.0.1": {
+        "en": "fix empty response error",
+        "de": "Behebung eines leeren Antwortfehlers",
+        "ru": "исправить пустую ошибку ответа",
+        "pt": "corrigir erro de resposta vazio",
+        "nl": "herstel lege responsfout",
+        "fr": "correction d'une erreur de réponse vide",
+        "it": "correggere l'errore di risposta vuoto",
+        "es": "corregir error de respuesta vacía",
+        "pl": "naprawić błąd pustej odpowiedzi",
+        "zh-cn": "修复空响应错误"
+      },
       "2.0.0": {
         "en": "complete redesign",
         "de": "komplette Neugestaltung",

@@ -137,16 +137,17 @@ class MystromSwitch extends utils.Adapter {
 
     if (this.checkStates()) {
       this.log.info("setting interval to " + this.interval + " seconds")
-      this.intervalObj = setInterval(this.checkStates, this.interval * 1000);
+      this.intervalObj = setInterval(this.checkStates.bind(this), this.interval * 1000);
       this.setStateAsync("info.connection", true, true)
     }
   }
 
   private async checkStates() {
     const url = this.config.url;
-
+    this.log.info("checkstates url " + url)
     //Get report
     const result = await this.doFetch("/report")
+    this.log.info("result " + JSON.stringify(result))
     if (result) {
       await this.setStateAsync("switchState", result.relay, true)
       await this.setStateAsync("power", result.power, true)
@@ -199,15 +200,9 @@ class MystromSwitch extends utils.Adapter {
     try {
       const response = await fetch(url + addr, { method: "get" })
       if (response.status == 200) {
-        if (response.size) {
-          const result = await response.json()
-          this.log.debug("got " + JSON.stringify(result))
-          return result
-        } else {
-          this.log.debug("ok, empty result")
-          return { "status": "ok" }
-        }
-
+        const result = await response.json()
+        this.log.debug("got " + JSON.stringify(result))
+        return result
       } else {
         this.log.error("Error while fetching " + addr + ": " + response.status)
         this.setState("info.connection", false, true);
