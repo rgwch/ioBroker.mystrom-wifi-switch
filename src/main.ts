@@ -127,6 +127,22 @@ class MystromSwitch extends utils.Adapter {
       native: {}
     });
 
+    await this.setObjectAsync('info.description', {
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Description",
+        "type": "string",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    });
+
+    const desc = await this.getStateAsync("info.decription")
+    if (!desc) {
+      this.setStateAsync("info.description", this.namespace)
+    }
 
 
     // in this template all states changes inside the adapters namespace are subscribed
@@ -141,6 +157,8 @@ class MystromSwitch extends utils.Adapter {
       this.setStateAsync("info.connection", true, true)
     }
   }
+
+
 
   private async checkStates() {
     const url = this.config.url;
@@ -202,9 +220,9 @@ class MystromSwitch extends utils.Adapter {
     try {
       const response = await fetch(url + addr, { method: "get" })
       if (response.status == 200) {
-        const text=await response.text()
-        this.log.debug("got: "+text)
-        if(text.length){
+        const text = await response.text()
+        this.log.debug("got: " + text)
+        if (text.length) {
           return JSON.parse(text)
         }
         return text

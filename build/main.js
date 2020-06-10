@@ -109,6 +109,21 @@ class MystromSwitch extends utils.Adapter {
                 },
                 native: {}
             });
+            yield this.setObjectAsync('info.description', {
+                "type": "state",
+                "common": {
+                    "role": "text",
+                    "name": "Description",
+                    "type": "string",
+                    "read": true,
+                    "write": true
+                },
+                "native": {}
+            });
+            const desc = yield this.getStateAsync("info.decription");
+            if (!desc) {
+                this.setStateAsync("info.description", this.namespace);
+            }
             // in this template all states changes inside the adapters namespace are subscribed
             this.subscribeStates("*");
             this.interval = this.config.pollingInterval || 60;
