@@ -35,11 +35,15 @@ That's all. If you have several switches, just create several instances.
 
 ## Use
 
-Each instance will create a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course). Newer models of the switch feature an additional temperature indicator. With older switches, this will always be 0.
+Each instance will create a info, a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course). Newer models of the switch feature an additional temperature indicator. With older switches, this will always be 0. The info.connection displays the connection state of the instance. this correlates to the "green" indicator on the instances page. The info.descripion is writeable to give the device a meaningful name.
 
 SwitchState is writeable.
 
 ## Changelog
+
+#### 2.0.4
+
+* Important bugfixes. Update is recommended.
 
 #### 2.0.0
 
@@ -72,16 +76,6 @@ SwitchState is writeable.
 
 * (rgwch) Converted to myStrom wifi switch adapter
 
-#### 0.5.0
-
-(vegetto) include vis widget
-
-#### 0.4.0
-
-(bluefox) fix errors with grunt
-
-#### 0.2.0
-* (bluefox) initial release
 
 ## License
 The MIT License (MIT)
