@@ -162,10 +162,10 @@ class MystromSwitch extends utils.Adapter {
 
   private async checkStates() {
     const url = this.config.url;
-    this.log.info("checkstates url " + url)
+    // this.log.info("checkstates url " + url)
     //Get report
     const result = await this.doFetch("/report")
-    this.log.info("result " + JSON.stringify(result))
+    this.log.info("result from " + url + ":" + JSON.stringify(result))
     if (result) {
       await this.setStateAsync("switchState", result.relay, true)
       await this.setStateAsync("power", result.power, true)
@@ -216,7 +216,7 @@ class MystromSwitch extends utils.Adapter {
     if (url.indexOf("://") == -1) {
       url = "http://" + url
     }
-    this.log.info("Fetching " + url + addr)
+    this.log.silly("Fetching " + url + addr)
     try {
       const response = await fetch(url + addr, { method: "get" })
       if (response.status == 200) {

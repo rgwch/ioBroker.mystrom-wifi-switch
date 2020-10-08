@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "mystrom-wifi-switch",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "news": {
+      "2.0.5": {
+        "en": "less log messages, some package updates",
+        "de": "weniger Protokollmeldungen, einige Paketaktualisierungen",
+        "ru": "меньше сообщений журнала, некоторые обновления пакетов",
+        "pt": "menos mensagens de log, algumas atualizações de pacote",
+        "nl": "minder logboekberichten, enkele pakketupdates",
+        "fr": "moins de messages de journal, quelques mises à jour de package",
+        "it": "meno messaggi di log, alcuni aggiornamenti dei pacchetti",
+        "es": "menos mensajes de registro, algunas actualizaciones de paquetes",
+        "pl": "mniej komunikatów dziennika, niektóre aktualizacje pakietów",
+        "zh-cn": "更少的日志消息，一些软件包更新"
+      },
       "2.0.3": {
         "en": "fix empty response error",
         "de": "Behebung eines leeren Antwortfehlers",
