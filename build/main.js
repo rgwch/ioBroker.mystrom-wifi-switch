@@ -128,11 +128,10 @@ class MystromSwitch extends utils.Adapter {
             this.subscribeStates("*");
             this.interval = this.config.pollingInterval || 60;
             this.interval = Math.max(this.interval, 10);
-            if (this.checkStates()) {
-                this.log.info("setting interval to " + this.interval + " seconds");
-                this.intervalObj = setInterval(this.checkStates.bind(this), this.interval * 1000);
-                this.setStateAsync("info.connection", true, true);
-            }
+            this.setStateAsync("info.connection", true, true);
+            yield this.checkStates();
+            this.log.info("setting interval to " + this.interval + " seconds");
+            this.intervalObj = setInterval(this.checkStates.bind(this), this.interval * 1000);
         });
     }
     checkStates() {
