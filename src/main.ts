@@ -205,7 +205,7 @@ class MystromSwitch extends utils.Adapter {
    */
   private onStateChange(id: string, state: ioBroker.State | null | undefined): void {
     if (state && !state.ack) {
-      this.doFetch("/relay?state=" + (state.val == true ? "1" : "0"))
+      this.doFetch("/relay?state=" + (state.val == false ? "0" : "1"))
     }
   }
 

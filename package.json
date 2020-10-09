@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mystrom-wifi-switch",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "control mystrom switches",
   "author": {
     "name": "rgwch",

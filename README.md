@@ -41,6 +41,11 @@ SwitchState is writeable.
 
 ## Changelog
 
+#### 2.0.5 and 2.0.6
+
+* Less log messages.
+* Does not turn off switch on (re)start.
+
 #### 2.0.4
 
 * Important bugfixes. Update is recommended.

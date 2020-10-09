@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "mystrom-wifi-switch",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "news": {
+      "2.0.6": {
+        "en": "does not turn off switch on startup",
+        "de": "schaltet den Schalter beim Start nicht aus",
+        "ru": "не выключается при запуске",
+        "pt": "não desliga o interruptor na inicialização",
+        "nl": "schakelt niet uit schakelaar bij opstarten",
+        "fr": "ne désactive pas l'interrupteur au démarrage",
+        "it": "non spegne l'interruttore all'avvio",
+        "es": "no apaga el interruptor al iniciar",
+        "pl": "nie wyłącza przełącznika przy starcie",
+        "zh-cn": "不能关闭开机启动"
+      },
       "2.0.5": {
         "en": "less log messages, some package updates",
         "de": "weniger Protokollmeldungen, einige Paketaktualisierungen",
