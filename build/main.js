@@ -181,7 +181,6 @@ class MystromSwitch extends utils.Adapter {
      */
     onStateChange(id, state) {
         if (state && !state.ack) {
-            console.log("state change:" + state.val);
             this.doFetch("/relay?state=" + (state.val == false ? "0" : "1"));
         }
     }
