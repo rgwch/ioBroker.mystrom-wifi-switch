@@ -24,18 +24,18 @@ or as a custom adapter from the admin-ui. Make sure to select "Beliebig" even th
 
 ![custom adapter](install_1.jpg)
 
-Find out the release you're interessed in: <https://github.com/rgwch/ioBroker.mystrom-wifi-switch/releases> and copy/paste the address of the .tar.gz link.
+Find out the release you're interested in: <https://github.com/rgwch/ioBroker.mystrom-wifi-switch/releases> and copy/paste the address of the .tar.gz link.
 
 Read the warning and click "install" if you agree.
 
 The adapter should then be in the admin pages's list.
 
-Click on the **+** sign on the right as usual to create an instance. The Config will ask you for the IP Address of the switch to manage, and for the polling interval in seconds.
+Click on the **+** sign on the right as usual to create an instance. The config page will ask you for the IP Address of the switch to manage, and for the polling interval in seconds.
 That's all. If you have several switches, just create several instances.
 
 ## Use
 
-Each instance will create a info, a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if  switchState is false, of course). Newer models of the switch feature an additional temperature indicator. With older switches, this will always be 0. The info.connection displays the connection state of the instance. this correlates to the "green" indicator on the instances page. The info.descripion is writeable to give the device a meaningful name.
+Each instance will create an info, a switchState and a switchPower object. SwitchState is true or false, switchPower is in Watts (and will always be 0 if switchState is false, of course). Newer models of the switch feature an additional temperature indicator. With older switches, this will always be 0. The info.connection displays the connection state of the instance. this correlates to the "green" indicator on the instances page. The info.descripion is writeable to give the device a meaningful name.
 
 SwitchState is writeable.
 

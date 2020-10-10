@@ -10,4 +10,6 @@ appveyor.yml
 src
 tsconfig.json
 tsconfig.build.json
-.afphoto
+*.afphoto
+*.tgz
+*.xcf
