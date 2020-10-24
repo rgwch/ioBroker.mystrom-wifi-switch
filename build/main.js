@@ -76,7 +76,7 @@ class MystromSwitch extends utils.Adapter {
                     name: 'day energy',
                     type: 'number',
                     read: true,
-                    write: false,
+                    write: true,
                     role: 'value'
                 },
                 native: {}
@@ -90,7 +90,7 @@ class MystromSwitch extends utils.Adapter {
                     name: 'consumed energy',
                     type: 'number',
                     read: true,
-                    write: false,
+                    write: true,
                     role: 'value'
                 },
                 native: {}
@@ -127,7 +127,7 @@ class MystromSwitch extends utils.Adapter {
             // in this template all states changes inside the adapters namespace are subscribed
             this.subscribeStates("*");
             this.interval = this.config.pollingInterval || 60;
-            this.interval = Math.max(this.interval, 10);
+            this.interval = Math.max(this.interval, 3);
             this.setStateAsync("info.connection", true, true);
             yield this.checkStates();
             this.log.info("setting interval to " + this.interval + " seconds");
@@ -146,6 +146,9 @@ class MystromSwitch extends utils.Adapter {
                 yield this.setStateAsync("power", result.power, true);
                 var wattseconds = result.power * this.interval;
                 var totalState = yield this.getStateAsync("total_energy");
+                if (!totalState) {
+                    totalState = { val: 0, ack: false, ts: new Date().getDate(), lc: new Date().getDate(), from: "" };
+                }
                 if (totalState) {
                     let val = (totalState.val || 0);
                     val = val + wattseconds / 3600;
