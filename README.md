@@ -7,7 +7,7 @@
 # ioBroker.mystrom-wifi-switch
 
 ------------
-**Warning:** Due to API changes, this adapter works only with Firmware up to 3.82.46. See [issue](https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/31)
+**Warning:** Due to API changes, this adapter works only with Firmware up to *3.82.46*. See [issue](https://github.com/rgwch/ioBroker.mystrom-wifi-switch/issues/31)
 
 ------------
 
