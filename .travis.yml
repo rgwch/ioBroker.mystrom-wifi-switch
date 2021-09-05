@@ -5,7 +5,10 @@ os:
 language: node_js
 node_js:
   - lts/*
+  - '12'
+  - '14'
+  - '16'
 script:
-  - "npm run test:package"
-  - "npm run test:unit"
-  - "npm run test:integration"
+  - 'npm run test:package'
+  - 'npm run test:unit'
+  - 'npm run test:integration'
